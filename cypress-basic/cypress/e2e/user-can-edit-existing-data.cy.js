@@ -37,8 +37,8 @@ describe('User Can Edit Data Existing Data', () => {
       .and('contain', 'User Berhasil Diupdate');
   });
 
-  //Challange 1
-  it('Challange 1 can edit user baru', () => {
+  //Challenge 1
+  it('Challenge 1 can edit user baru', () => {
     cy.get('.table td')
     .contains('User Baru')
     .parent().find('a')
@@ -53,24 +53,6 @@ describe('User Can Edit Data Existing Data', () => {
       .should('be.visible')
       .and('have.class', 'alert-success')
       .and('contain', 'User Berhasil Diupdate');
-  });
-  //Challange 2
-  it.only('Challange 2 can edit user', () => {
-    cy.get('.table td')
-    .contains('user')
-    .parent().find('a')
-    .contains('Edit')
-    .click();
-    cy.get('#name').clear('User ');
-    cy.get('#name').type('M Setya Budi P edited');
-    cy.get('.btn-primary').contains('Submit').click();
-    cy.get('.table td').contains('M Setya Budi P').should('have.text', 'M Setya Budi P edited');
-    // assert
-    cy.get('.alert')
-      .should('be.visible')
-      .and('have.class', 'alert-success')
-      .and('contain', 'User Berhasil Diupdate');
-
   });
 
   // negative test case
